@@ -3,8 +3,8 @@ import shutil
 from typing import Any
 from urllib.parse import urlparse
 
-import paramiko
-import requests as requests
+import requests
+from plumbum import local
 
 def mv(url: str, path: str, replace=False, recursive=True, **kwargs):
     if os.path.exists(path) and not replace:
@@ -29,7 +29,6 @@ http = https
 def ssh(url: str, path: str, replace=False, recursive=True, **kwargs: str):
     if os.path.exists(path) and not replace:
         return False
-    from plumbum import local
 
     qs = urlparse(url)
 
