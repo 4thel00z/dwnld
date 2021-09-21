@@ -14,7 +14,6 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-paramiko = "^2.7.2"
 scp = "^0.13.6"
 plumbum = "^1.7.0"
 requests = "^2.26.0"
