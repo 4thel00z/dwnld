@@ -17,3 +17,7 @@ publish: ## Publish package to pypi
 .PHONY:
 pypi: ## Open pypi package in browser
 	xdg-open https://pypi.org/project/dwnld
+
+.PHONY:
+stats: ## Open pypistats for the package in browser
+	xdg-open https://pypistats.org/packages/dwnld
