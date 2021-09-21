@@ -1,8 +1,11 @@
-install:
+install: ## Install package into the virtualenv
 	poetry install
-update:
+
+update: ## Update deps
 	poetry update
-shell:
+
+shell: ## Enter the virtualenv
 	poetry shell
-run:
-	python3 dwnld/__main__.py
+
+publish: ## Publish package to pypi
+	poetry publish --build
