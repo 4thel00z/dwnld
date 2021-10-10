@@ -17,6 +17,8 @@ download("file://stuff.txt", "somewhere_else.txt")
 download("ssh://some-remote-server:/home/reptile/stuff.txt", "here.txt")
 download("https://cool.com/nice.pdf", "here.pdf")
 download("http://cool.com/nice.pdf", "here.pdf")
+# supports tor via
+download("onion://cool.onion/here.pdf", "here.pdf", proto="https")
 ```
 
 ## Todos
