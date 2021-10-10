@@ -25,6 +25,7 @@ download("onion://cool.onion/here.pdf", "here.pdf", proto="https")
 
 - Support ftp/sftp
 - Support torrent
+- Support non-default ports for tor/socks4/socks5 server
 
 ## License
 
