@@ -65,8 +65,8 @@ def tor(
     **kwargs: str,
 ):
     qs = urlparse(url)
-    scheme, netloc, path, params, query, fragment = proto, *qs[1:]
-    fixed_url = ParseResult(scheme, netloc, path, params, query, fragment).geturl()
+    scheme, netloc, _path, params, query, fragment = proto, *qs[1:]
+    fixed_url = ParseResult(scheme, netloc, _path, params, query, fragment).geturl()
 
     with TorRequests() as tor_requests:
         with tor_requests.get_session() as sess:
@@ -100,7 +100,7 @@ def _pick_downloader(url: str):
 
 
 def download(url: str, path: str, replace=False, recursive=True, **kwargs: Any):
-    handler = pick_downloader(url)
+    handler = _pick_downloader(url)
     if not handler:
         supported = "\n".join(HANDLED_SUFFIXES.keys())
         raise ValueError(
